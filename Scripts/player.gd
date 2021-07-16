@@ -5,10 +5,19 @@ var velocity = Vector2.ZERO
 export var speed =250.0
 export var bullet_speed = 1000.0
 export var fire_rate = 0.5
+export var max_health = 100
+export var damaged_rate = 0.5
+var health = max_health
+
 
 var player_bullet_path = preload("res://scenes/Bullet.tscn")
 
 var fire_possible = true
+var get_damaged = true
+
+
+
+
 
 func _process(delta):
 	look_at(get_global_mouse_position())
@@ -21,7 +30,9 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide(velocity)
 
-
+func _ready():
+	set_max_health()
+	update_health()
 
 func Move() -> Vector2:
 	var direction = Vector2(
@@ -40,3 +51,23 @@ func Fire() -> void:
 		fire_possible = false
 		yield(get_tree().create_timer(fire_rate), "timeout")
 		fire_possible = true
+
+func _on_Enemy_body_entered():
+	print(1)
+	health -= 10
+	if get_damaged == true:
+		update_health()
+	get_damaged = false
+	yield(get_tree().create_timer(damaged_rate), "timeout")
+	get_damaged = true
+
+
+func set_max_health():
+	for child in get_children():
+		if child.has_method("_on_max_health_updated"):
+			child._on_max_health_updated(max_health)
+
+func update_health():
+	for child in get_children():
+		if child.has_method("on_health_updated"):
+			child.on_health_updated(health)

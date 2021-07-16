@@ -11,7 +11,8 @@ func _on_Bullet_body_entered(body):
 		var Blood = Blood_Path.instance()
 		Blood.position = body.get_global_position()
 		get_tree().get_root().add_child(Blood)
-		body.health-=1
+		body.health -=1
+		body.update_health()
 		if body.health == 0 :
 			body.queue_free()
 		queue_free()
