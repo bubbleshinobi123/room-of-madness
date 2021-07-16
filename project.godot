@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Actor",
 "language": "GDScript",
-"path": "res://player.gd"
+"path": "res://Scripts/player.gd"
 } ]
 _global_script_class_icons={
 "Actor": ""
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Room of Madness"
-run/main_scene="res://Scenes/test2.tscn"
+run/main_scene="res://scenes/Test scene.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -55,6 +55,13 @@ fire={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_render/layer_1="Player"
+2d_render/layer_2="Bullet"
+2d_render/layer_3="Enemy"
+2d_render/layer_4="Walls"
 
 [physics]
 
