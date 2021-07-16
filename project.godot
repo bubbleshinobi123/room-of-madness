@@ -14,9 +14,19 @@ config/name="Room of madness"
 run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+default_bus_layout="res://assets/default_bus_layout.tres"
+
 [display]
 
 mouse_cursor/custom_image="res://assets/cursor.png"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[global]
+
+group=false
 
 [physics]
 
