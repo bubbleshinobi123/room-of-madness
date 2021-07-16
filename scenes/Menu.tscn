@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/FreePixel.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/menu.gd" type="Script" id=2]
-[ext_resource path="res://assets/Room-of-Madness.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/Room-of-Madness.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/shoot.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/FreePixel.ttf"
@@ -157,11 +158,15 @@ margin_right = 525.0
 margin_bottom = 320.0
 text = "Fullscreen"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 3 )
 autoplay = true
 bus = "Music"
+
+[node name="SelectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Sounds"
 
 [connection signal="pressed" from="MainMenuPanel/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="MainMenuPanel/OptionsButton" to="." method="_on_OptionsButton_pressed"]
