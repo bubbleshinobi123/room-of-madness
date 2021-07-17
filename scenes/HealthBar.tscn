@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/Health Bar/Health Border.png" type="Texture" id=1]
-[ext_resource path="res://assets/Health Bar/Health Empty.png" type="Texture" id=2]
-[ext_resource path="res://assets/Health Bar/Health Filled.png" type="Texture" id=3]
+[ext_resource path="res://assets/Big health bar test/Health Empty Big.png" type="Texture" id=1]
+[ext_resource path="res://assets/Big health bar test/Health Full Big.png" type="Texture" id=2]
+[ext_resource path="res://assets/Big health bar test/Big hearth test.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/HealthBar.gd" type="Script" id=4]
 
 [node name="HealthBar" type="Control"]
@@ -16,11 +16,13 @@ __meta__ = {
 [node name="HealthBar" type="TextureProgress" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-max_value = 5.0
-value = 3.0
-texture_under = ExtResource( 2 )
-texture_over = ExtResource( 1 )
-texture_progress = ExtResource( 3 )
+min_value = -2.0
+max_value = 10.0
+step = 0.0
+value = 10.0
+texture_under = ExtResource( 1 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
 tint_progress = Color( 0, 1, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -30,7 +30,9 @@ position = Vector2( 47.6285, 0.112694 )
 current = true
 
 [node name="HealthBar" parent="." instance=ExtResource( 3 )]
-margin_left = 21.7255
-margin_top = 26.2204
-margin_right = 61.7255
-margin_bottom = 66.2204
+margin_left = -47.6861
+margin_top = 22.2159
+margin_right = -7.68612
+margin_bottom = 62.2159
+
+[connection signal="input_event" from="." to="." method="_on_Player_input_event"]
